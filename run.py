@@ -3,5 +3,5 @@ import eel
 
 if __name__ == "__main__":
    eel.init("app")
-   eel.start("templates/index.html", size=(1000, 600), mode="chrome", port=8000, options={"chromeFlags": ["--start-fullscreen"]}, suppress_error=True)
+   eel.start("templates/index.html", size=(1000, 600))
    #app.run(port=8000)

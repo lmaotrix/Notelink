@@ -1,46 +1,58 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const titleInput = document.querySelector('.title input');
-    const bodyEditor = document.querySelector('trix-editor');
+    const titleInput = document.querySelector('.NewNote .title-input');
+    const bodyEditor = document.querySelector('.NewNote trix-editor');
+    const wtfButton = document.getElementById('wtf');
+    const explanationDiv = document.querySelector('.NewNote .explanation');
+    const darkModeToggle = document.getElementById('darkMode');
+    const newNoteButton = document.querySelector('.NewNote .action .new_note');
 
     // Function to handle form submission
-    function handleSubmit(event) {
-        event.preventDefault();
-        const titleValue = titleInput.value.trim();
-        const bodyValue = bodyEditor.editor.getDocument().toString().trim();
+function handleSubmit(event) {
+    event.preventDefault();
+    const titleInput = document.querySelector('.NewNote .title-input');
+    const titleValue = titleInput.value.trim();
 
-        if (titleValue === '' || bodyValue === '') {
-            alert('Please add a title and a body to your note');
-            return;
-        }
-
-        // Here you can submit the form or perform any other action
-        console.log('Note submitted:', titleValue, bodyValue);
+    // Validate title
+    if (titleValue === '') {
+        alert('Please add a title to your note');
+        return;
     }
 
-    // Add event listener to form submission
-    document.querySelector('form').addEventListener('submit', handleSubmit);
+    // Submit the form
+    event.target.submit();
+}
+
+// Add event listener to form submission
+const form = document.querySelector('.NewNote form');
+if (form) {
+    form.addEventListener('submit', handleSubmit);
+}
+
 
     // Function to handle dark mode toggle
-    document.getElementById('darkMode').addEventListener('change', function() {
-        document.body.classList.toggle('dark_mode');
-    });
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('change', function() {
+            document.body.classList.toggle('dark_mode');
+        });
+    }
 
     // Function to create a new note
-    document.querySelector('.action.new_note').addEventListener('click', function() {
-        // Reset title and body inputs
-        titleInput.value = '';
-        bodyEditor.editor.loadHTML('');
-    });
+    // if (newNoteButton) {
+    //     newNoteButton.addEventListener('click', function() {
+    //         // Reset title and body inputs
+    //         if (titleInput) {
+    //             titleInput.value = '';
+    //         }
+    //         if (bodyEditor) {
+    //             bodyEditor.editor.loadHTML('');
+    //         }
+    //     });
+    // }
+
+    // Open explanation category
+    if (wtfButton && explanationDiv) {
+        wtfButton.addEventListener('click', function() {
+            explanationDiv.classList.toggle('open');
+        });
+    }
 });
-
-// open explanation category
-document.addEventListener("DOMContentLoaded", function() {
-    const wtfButton = document.getElementById('wtf');
-    const explanationDiv = document.querySelector('.explanation');
-
-    // Toggle the open class on explanation div when the wtf button is clicked
-    wtfButton.addEventListener('click', function() {
-        explanationDiv.classList.toggle('open');
-    });
-});
-

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 trix-editor {
     border: 1px solid #bbb;
     border-radius: 3px;
@@ -881,7 +882,7 @@ trix-toolbar .trix-button:hover {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp
+    animation-name: fadeInUp;
 }
 
 .Notes .buttons .social-buttons ul {
@@ -995,6 +996,26 @@ trix-toolbar .trix-button:hover {
 .secondary-links-container {
     padding-left: 1em;
     flex: 0 1 auto
+}
+
+.list-notes-btn {
+    position: relative;
+    margin-right: 2.4em;
+    display: inline-block;
+    cursor: pointer;
+    height: 32px;
+    border-radius: 50%;
+    padding: 0px;
+    width: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    
+}
+
+.list-notes-btn:hover {
+    background-color: #efefef
 }
 
 .action {

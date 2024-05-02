@@ -80,184 +80,74 @@
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico"> 
     <title>Workspace</title>
     <script type="text/javascript" src="/eel.js"></script>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
     <link rel="stylesheet" href="../static/css/styles.css">
+    
 </head>
 
 <body>
     <div id="root">
         <div class="app">
             <div class="NewNote">
-                <form>
+                <form action="/posted" method="post">
                     <div class="title">
-                        <input type="text" placeholder="Title" value="">
+                        <input class="title-input" name="Title" type="text" placeholder="Title" value="">
                     </div>
+
                     <div class="buttons">
                         <div class="submit">
-                            <span class="btn disabled" type="submit"
-                                data-hint="Please add a title and a body to your note">Publish</span>
+                            <button class="btn disabled" type="submit"
+                                data-hint="Please add a title and a body to your note">Publish
+                            </button>
                         </div>
                         <div class="secondary-links-container">
                             <div class="action new_note hint" data-hint="Create a new note">
-
+    
                             </div>
                             <a class="action list_notes hint" rel="noopener noreferrer" data-hint="My notes"
-                                href="/mynotes">
-
+                                href="notes.html">
                             </a>
                         </div>
                     </div>
-                    <div class="body">
-                        <div id="trix-editor-top-level-T2cbe5643-b0ba-419d-a46f-436c37a5ca5c" style="position: relative;">
-                            <trix-toolbar id="trix-toolbar-1">
-                                <div class="trix-button-row">
-                                    <span class="trix-button-group trix-button-group--text-tools"
-                                        data-trix-button-group="text-tools">
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-bold"
-                                            data-trix-attribute="bold" data-trix-key="b" title="Bold"
-                                            tabindex="-1">Bold</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-italic"
-                                            data-trix-attribute="italic" data-trix-key="i" title="Italic"
-                                            tabindex="-1">Italic</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-strike"
-                                            data-trix-attribute="strike" title="Strikethrough"
-                                            tabindex="-1">Strikethrough</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-link"
-                                            data-trix-attribute="href" data-trix-action="link" data-trix-key="k"
-                                            title="Link" tabindex="-1">Link</button>
-                                    </span>
+                </form>
 
-                                    <span class="trix-button-group trix-button-group--block-tools"
-                                        data-trix-button-group="block-tools">
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-heading-1"
-                                            data-trix-attribute="heading1" title="Heading"
-                                            tabindex="-1">Heading</button><button type="button"
-                                            class="trix-button trix-button--icon-heading-2"
-                                            data-trix-attribute="heading2" title="Sub Heading" tabindex="-1">H2</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-quote"
-                                            data-trix-attribute="quote" title="Quote"
-                                            tabindex="-1">Quote</button><button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-horizontal-rule"
-                                            data-trix-action="x-horizontal-rule" title="Divider"
-                                            tabindex="-1">Divider</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-code"
-                                            data-trix-attribute="code" title="Code" tabindex="-1">Code</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-bullet-list"
-                                            data-trix-attribute="bullet" title="Bullets" tabindex="-1">Bullets</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-number-list"
-                                            data-trix-attribute="number" title="Numbers" tabindex="-1">Numbers</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-decrease-nesting-level"
-                                            data-trix-action="decreaseNestingLevel" title="Decrease Level" tabindex="-1"
-                                            disabled="">Decrease Level</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-increase-nesting-level"
-                                            data-trix-action="increaseNestingLevel" title="Increase Level" tabindex="-1"
-                                            disabled="">Increase Level</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-attach"
-                                            data-trix-action="x-attach" title="Attach a file" tabindex="-1">Attach a
-                                            file</button><button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-video"
-                                            data-trix-attribute="video" title="Embed Video"
-                                            tabindex="-1">Video</button></span>
+                <div class="body">
+                    <div id="trix-editor-facade" style="position: relative;">
+                        <trix-toolbar id="trix-toolbar">
 
-                                    <span class="trix-button-group trix-button-group--file-tools"
-                                        data-trix-button-group="file-tools">
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-attach"
-                                            data-trix-action="attachFiles" title="Attach Files" tabindex="-1">Attach
-                                            Files</button>
-                                    </span>
+                        </trix-toolbar>
+                        <trix-editor id="editor" input="editor-content" placeholder="Your note" contenteditable
+                            role="textbox" trix-id="1" toolbar="trix-toolbar">
 
-                                    <span class="trix-button-group-spacer"></span>
-
-                                    <span class="trix-button-group trix-button-group--history-tools"
-                                        data-trix-button-group="history-tools">
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-undo"
-                                            data-trix-action="undo" data-trix-key="z" title="Undo" tabindex="-1"
-                                            disabled="">Undo</button>
-                                        <button type="button"
-                                            class="trix-button trix-button--icon trix-button--icon-redo"
-                                            data-trix-action="redo" data-trix-key="shift+z" title="Redo" tabindex="-1"
-                                            disabled="">Redo</button>
-                                    </span>
-                                </div>
-
-                                <div class="trix-dialogs" data-trix-dialogs="">
-                                    <div class="trix-dialog trix-dialog--link" data-trix-dialog="href"
-                                        data-trix-dialog-attribute="href">
-                                        <div class="trix-dialog__link-fields">
-                                            <input type="url" name="href" class="trix-input trix-input--dialog"
-                                                placeholder="Enter a URL…" aria-label="URL" required=""
-                                                data-trix-input="" disabled="disabled">
-                                            <div class="trix-button-group">
-                                                <input type="button" class="trix-button trix-button--dialog"
-                                                    value="Link" data-trix-method="setAttribute">
-                                                <input type="button" class="trix-button trix-button--dialog"
-                                                    value="Unlink" data-trix-method="removeAttribute">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="trix-dialog trix-dialog--video" data-trix-dialog="video"
-                                        data-trix-dialog-attribute="video">
-                                        <div class="trix-dialog__link-fields">
-                                            <input type="url" name="href" class="trix-input trix-input--dialog"
-                                                placeholder="Enter a Youtube URL…" aria-label="URL" required=""
-                                                data-trix-input="" disabled="disabled">
-                                            <div class="trix-button-group">
-                                                <input type="button" class="trix-button trix-button--dialog"
-                                                    value="Insert" data-trix-dialog-submit--video="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </trix-toolbar>
-                            <trix-editor id="editor-T2cbe5643-b0ba-419d-a46f-436c37a5ca5c"
-                                input="input-T2cbe5643-b0ba-419d-a46f-436c37a5ca5c" autofocus="true"
-                                placeholder="Your note" contenteditable="" role="textbox" trix-id="1"
-                                toolbar="trix-toolbar-1">
-                            </trix-editor>
-                            <input type="hidden" id="input-T2cbe5643-b0ba-419d-a46f-436c37a5ca5c" value="">
-                        </div>
+                        </trix-editor>
+                        <input type="hidden" id="editor-content" value="">
                     </div>
-                    <div id="wtf">
-                        ?
+                </div>
+                <div id="wtf">
+                    ?
+                </div>
+                <div class="explanation ">
+                    <h2>
+                        Hi
+                        <span role="img" aria-label="Waving-hand">
+                            👋
+                        </span>
+                    </h2>
+                    <p> <a href="/about.html" rel="noopener noreferrer">What is NoteLink</a></p>
+                    <p> <a href="notes.html">Your notes</a></p>
+                    <hr>
+                    <div class="darkModeToggle">
+                        <input type="checkbox" id="darkMode">
+                        <label for="darkMode">Toggle</label>
+                        <span>Dark mode</span>
                     </div>
-                    <div class="explanation ">
-                        <h2>
-                            Hi
-                            <span role="img" aria-label="Waving-hand">
-                                👋
-                            </span>
-                        </h2>
-                        <p> <a href="https://quicknote.io/940cad20-0b87-11e9-a33b-93687ca9130d"
-                                rel="noopener noreferrer" target="_blank">What is QuickNote</a></p>
-                        <p> <a href="/mynotes">Your notes</a></p>
-                        <hr>
-                        <div class="darkModeToggle">
-                            <input type="checkbox" id="darkMode" checked="">
-                            <label for="darkMode">Toggle</label>
-                            <span>Dark mode</span>
-                        </div>
-                        <p class="mini">Version 19 - <a href="https://quicknote.io/about" rel="noopener noreferrer"
-                                target="_blank">View changelog</a></p>
-                        <p class="mini">Made by <a href="https://twitter.com/mnlfrgr" rel="noopener noreferrer"
-                                target="_blank">Gianluca Langhans</a></p>
-                    </div>
+                    <p class="mini">Made by <a href="https://github.com/lmaotrix" rel="noopener noreferrer"
+                            target="_blank">Gianluca Langhans</a></p>
+                </div>
             </div>
         </div>
         <script src="../static/js/script.js"></script>
