@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <title>Workspace</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <header id="navbar">
+        <nav class="navbar-container container">
+            <a href="/" class="home-link">
+                <div class="navbar-logo"></div>
+                NoteLink
+            </a>
+            <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+                aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div id="navbar-menu" aria-labelledby="navbar-toggle">
+                <ul class="navbar-links">
+                    <li class="navbar-item"><a class="navbar-link" href="/notes">notes</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/login">Login</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/register">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="editor">
+        <form action="/posted" method="post" class="editorform">
+            <div class="title">
+                <input placeholder="Enter your Title..." class="input" name="title" type="text">
+            </div>
+            
+            <textarea id="textarea" style="width: 639px; height: 280px; margin: -66px;">
+
+            </textarea>
+                
+            
+            <div class="buttons">
+                
+                <button type="submit">
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                    <span class="circle3"></span>
+                    <span class="circle4"></span>
+                    <span class="circle5"></span>
+                    <span class="text">Save</span>
+                </button>
+                <button type="button">
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                    <span class="circle3"></span>
+                    <span class="circle4"></span>
+                    <span class="circle5"></span>
+                    <span class="text">Create New</span>
+                </button>
+                <button type="button">
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                    <span class="circle3"></span>
+                    <span class="circle4"></span>
+                    <span class="circle5"></span>
+                    <span class="text">View Notes</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/editor.js"></script>
+</body>
+
+</html>
