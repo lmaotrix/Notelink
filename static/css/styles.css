@@ -181,6 +181,7 @@
   }
 
   .input {
+    color: rgb(233, 235, 240);
     background-color: #212121;
     width: 600px;
     height: 40px;
@@ -266,4 +267,24 @@
   .editorform {
     margin-top: 186px;
     height: 224px;
+  }
+
+  #textarea {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #212121;
+    border: 2px solid #212121;
+    border-radius: 4px;
+    color: white;
+  }
+
+  #textarea:focus {
+    color: rgb(233, 235, 240);
+    background-color: #212121;
+    outline-color: rgb(233, 235, 240);
+    box-shadow: -3px -3px 15px rgb(233, 235, 240);
+    transition: .1s;
+    transition-property: box-shadow;
   }

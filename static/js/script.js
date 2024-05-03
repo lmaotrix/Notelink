@@ -12,3 +12,14 @@ navbarToggle.addEventListener("click", toggleNavbarVisibility);
 
 navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
 navbarMenu.addEventListener("click", toggleNavbarVisibility);
+
+// handle create new note btn
+
+document.getElementById("createNote").addEventListener("click", function() {
+
+  var titleInput = document.getElementById("noteTitle");
+  var contentInput = document.getElementById("textarea");
+
+  titleInput.value = "";
+  contentInput.value = "";
+});

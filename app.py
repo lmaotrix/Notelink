@@ -15,6 +15,19 @@ Session(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+# db models definitions
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100), nullable=False, unique=True)
+    hash = db.Column(db.String(100), nullable=False)
+
+class Note(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
+    content = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+
 # add routes
 from flask import redirect, render_template, request, session, make_response
 
@@ -25,26 +38,26 @@ def index():
 @app.route("/posted", methods=["GET", "POST"])
 def posted():
     if request.method == "POST":
+        if not session.get["logged_in"]:
+            return render_template("401.html", message="ERROR: 401 unauthorized. You must be logged in to save notes")
+        
         note_title = request.form.get("title")
-        print("yes")
+        note_content = request.form.get("content")
 
-        if note_title:
-            print("yes1")
-            session["note_title"] = note_title
-            print("yes2")
+        if note_title and note_content:
+            new_note = Note(title=note_title, content=note_content)
+            db.session.add(new_note)
+            db.session.commit()
             return redirect("/notes")
         else:
-            return render_template("index.html", error="Please add a title and a body to the note")
+            return render_template("index.html", error="Please add both a title and content to the note")
         
-    return render_template("notes.html")
+    return render_template("index.html")
 
 @app.route("/notes", methods=["GET", "POST"])
 def notes():
-    if request.method == "POST":
-        note_title = session.get("note_title", None)
-        print("yes3")
-        return render_template("notes.html", note_title=note_title)
-    return render_template("notes.html")
+    notes = Note.query.all()
+    return render_template("notes.html", notes=notes)
 
 
 @app.route("/about")
