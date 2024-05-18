@@ -8,12 +8,12 @@
     margin: 0;
   }
   
-  #notfound {
+  #unauthorized {
     position: relative;
     height: 100vh;
   }
   
-  #notfound .notfound {
+  #unauthorized .unauthorized {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -22,26 +22,26 @@
             transform: translate(-50%, -50%);
   }
   
-  .notfound {
+  .unauthorized {
     max-width: 520px;
     width: 100%;
     line-height: 1.4;
     text-align: center;
   }
   
-  .notfound .notfound-404 {
+  .unauthorized .unauthorized-401 {
     position: relative;
     height: 240px;
   }
   
-  .notfound .notfound-404 h1 {
+  .unauthorized .unauthorized-401 h1 {
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     font-size: 252px;
     font-weight: 900;
     margin: 0px;
@@ -51,11 +51,11 @@
     margin-left: -20px;
   }
   
-  .notfound .notfound-404 h1>span {
+  .unauthorized .unauthorized-401 h1>span {
     text-shadow: -8px 0px 0px #fff;
   }
   
-  .notfound .notfound-404 h3 {
+  .unauthorized .unauthorized-401 h3 {
     font-family: 'Cabin', sans-serif;
     position: relative;
     font-size: 16px;
@@ -67,41 +67,41 @@
     padding-left: 6px;
   }
   
-  .notfound h2 {
+  .unauthorized h2 {
     font-family: 'Cabin', sans-serif;
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
     color: #000;
-    margin-top: 0px;
+    margin-top: 186px;
     margin-bottom: 25px;
   }
   
   @media only screen and (max-width: 767px) {
-    .notfound .notfound-404 {
+    .unauthorized .unauthorized-401 {
       height: 200px;
     }
-    .notfound .notfound-404 h1 {
+    .unauthorized .unauthorized-401 h1 {
       font-size: 200px;
     }
   }
   
   @media only screen and (max-width: 480px) {
-    .notfound .notfound-404 {
+    .unauthorized .unauthorized-401 {
       height: 162px;
     }
-    .notfound .notfound-404 h1 {
+    .unauthorized .unauthorized-401 h1 {
       font-size: 162px;
       height: 150px;
       line-height: 162px;
     }
-    .notfound h2 {
+    .unauthorized h2 {
       font-size: 16px;
     }
   }
 
   .button {
-    display: inline-block;
+    display: flex;
     border-radius: 7px;
     border: none;
     background: #1875FF;
@@ -114,6 +114,8 @@
     padding: 1em;
     transition: all 0.4s;
     cursor: pointer;
+    margin-left: 800px;
+    margin-top: -263px;
    }
    /* sign up button */
    .button span {
