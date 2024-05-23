@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
     <link rel="stylesheet" href="/static/css/notes.css">
-    <title>My notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Notes</title>
 </head>
 <body>
-    <h1>Hello!</h1>
+    <div id="root">
+        <div class="app">
+            <div class="notes">
+                <div class="title">
+                    <h1>My Notes</h1>
+                </div>
+                <div class="buttons">
+                    <a href="/" class="btn">New Note</a>
+                </div>
+                <div class="body">
+                    <div>
+                        <ul class="mynotes nolist">
+                            <!--ADD NOTES DYNAMICALLY HERE-->
+                            {% for note in notes %}
+                            <li>
+                                <a href="{{ url_for('index', note_id=note.id) }}" style="color: #f1f1f1;">{{ note.title }}</a>
+                                <form method="post" action="{{ url_for('delete_note' , note_id=note.id) }}">
+                                    <button class="btn btn-delete" type="submit"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -34,34 +34,55 @@ class Note(db.Model):
 # add routes
 from flask import redirect, render_template, request, session, make_response, flash
 
-@app.route("/", methods=["GET"])
-def index():
-    return render_template("index.html")
+@app.route("/", methods=["GET", "POST"])
+@app.route("/<int:note_id>", methods=["GET", "POST"])
+def index(note_id=None):
+    note = None
+    if note_id:
+        note = Note.query.get_or_404(note_id)
 
-@app.route("/posted", methods=["GET", "POST"])
-def posted():
     if request.method == "POST":
         if not session.get("logged_in"):
             return redirect("/access")
         
+        note_id = request.form.get("note_id")
         note_title = request.form.get("title")
         note_content = request.form.get("content")
         user_id = session.get("user_id")
 
-        if note_title and note_content:
-            new_note = Note(title=note_title, content=note_content, user_id=user_id)
-            db.session.add(new_note)
-            db.session.commit()
-            return redirect("/notes")
+        if note_id:
+            note = Note.query.get(note_id)
+            note.title = note_title
+            note.content = note_content
         else:
-            return render_template("index.html", error="Please add both a title and content to the note")
-        
-    return render_template("index.html")
+            if note_title and note_content:
+                note = Note(title=note_title, content=note_content, user_id=user_id)
+                db.session.add(note)
+            else:
+                return render_template("index.html", note=note, error="Please add both a title and content to the note")
+            
+        db.session.commit()
+        return redirect("/notes")
+    
+    return render_template("index.html", note=note)
+
 
 @app.route("/notes", methods=["GET", "POST"])
 def notes():
-    notes = Note.query.all()
+    user_id = session.get("user_id")
+    notes = Note.query.filter_by(user_id=user_id).all()
     return render_template("notes.html", notes=notes)
+
+@app.route("/delete_note/<int:note_id>", methods=["POST"])
+def delete_note(note_id):
+    note = Note.query.get(note_id)
+    if note:
+        db.session.delete(note)
+        db.session.commit()
+        flash("Note deleted successfully")
+    else:
+        flash("Note not found")
+    return redirect("/notes")
 
 
 @app.route("/about")

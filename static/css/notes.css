@@ -1,0 +1,209 @@
+@import"https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap";
+
+body,
+html {
+    background-color: #3b3b3b;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 100%;
+    min-height: 100%;
+    display: block;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    transition: .3s background-color ease, .1s color ease;
+    font-family: Inter, serif, sans-serif
+}
+
+body {
+    color: #222;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400
+}
+
+.app {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto 100px
+}
+
+.notes {
+    position: relative;
+}
+
+.notes .title, .notes .body {
+    display: block;
+    white-space: pre-wrap;
+    margin: 10px 0 12px;
+}
+
+.buttons {
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding-right: calc(64px + .6em);
+    left: 0;
+    z-index: 101;
+    background: #fff;
+    padding: 15px 0 9px 20px;
+    transition: .3s background-color ease;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.btn {
+    background-color: #68696b;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #f1f1f1;
+    text-decoration: none;
+    width: auto;
+    border-radius: 4px;
+    text-transform: capitalize;
+    padding: 6px 12px;
+    cursor: pointer;
+    display: block;
+}
+
+
+
+.notes .title,
+.notes .body {
+    display: block;
+    white-space: pre-wrap;
+    margin: 10px 0 12px
+}
+
+.notes h1 {
+    font-size: 34px;
+    line-height: 32px;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0 0 1em;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.notes .body ol,
+.notes .body ul {
+    margin-bottom: 1.7em;
+    padding-left: 3em
+}
+
+.notes .body ol li,
+.notes .body ul li {
+    margin-bottom: -2.8em;
+    height: 65px;
+}
+
+.notes .body a {
+    position: relative;
+    color: #686060;
+    text-decoration: none
+}
+
+a.simple-link {
+    color: #686060;
+    text-decoration: none
+}
+
+.notes .buttons {
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 10px 0;
+    height: 0
+}
+
+.notes .buttons {
+    font-size: 13px;
+    padding: 7px 0;
+    margin-bottom: 7px
+}
+
+.notes .buttons {
+    display: block;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 0;
+    text-transform: uppercase;
+    outline: none;
+    border: 0;
+    border-radius: 16px;
+    cursor: pointer;
+    position: relative
+}
+
+.notes .buttons {
+    top: 1px;
+    background: #777
+}
+
+.mynotes {
+    padding: 0 !important;
+    list-style: none;
+    margin-top:-160px;
+    margin-left: 37%
+}
+
+.mynotes li {
+    margin-bottom: .2em;
+    padding-left: 0 !important;
+    border-radius: 4px;
+    background-color: #222;
+    width: 700px;
+}
+
+.mynotes a {
+    margin-left: -94px;
+}
+
+.notes .buttons {
+    position: absolute;
+    left: 15%;
+    margin-left: -130px;
+    width: 260px;
+    right: auto;
+    bottom: auto;
+    top: 45px
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+form {
+    margin-left: 636px;
+    margin-top: -84px;
+}

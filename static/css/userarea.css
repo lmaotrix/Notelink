@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 body {
     background-color: #3b3b3b;
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #userarea-section {
+    display: flex;
     background-color: #555454;
     width: 40%;
     height: 25%;
@@ -13,4 +17,56 @@ body {
     max-height: 100dvh;
     margin: auto;
     border-radius: 5px;
+}
+
+h1 {
+    display: flex;
+    margin-left: 40%;
+    max-width: 40%;
+    height: 50px;
+}
+
+
+.signup {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.login {
+    display: flex;
+    align-content: flex-start;
+}
+
+.login-button {
+    display: flex;
+    height: 60px;
+    margin-top: 100px;
+    margin-left: -48%;
+}
+
+.signup-button {
+    display: flex;
+    height: 60px;
+    margin-top: 100px;
+    margin-left: 40%;
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: #2E2E2E;
+    padding: 18px 32px;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0px 4px 15px rgba(46, 46, 46, 0.15);
+}
+
+p {
+    margin-top: 165px;
+    margin-left: -152.5px;
 }

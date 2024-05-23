@@ -39,13 +39,16 @@
     </header>
 
     <div id="editor">
-        <form action="/posted" method="post" class="editorform">
+        <form action="/" method="post" class="editorform">
+            {% if note %}
+            <input type="hidden" name="note_id" value="{{ note.id }}">
+            {% endif %}
             <div class="title">
-                <input id="noteTitle" placeholder="Enter your Title..." class="input" name="title" type="text">
+                <input id="noteTitle" placeholder="Enter your Title..." class="input" name="title" type="text" value="{{ note.title if note else '' }}" required>
             </div>
             
-            <textarea id="textarea" style="width: 639px; height: 280px; margin: -66px;" placeholder="Insert Text..." name="content">
-
+            <textarea id="textarea" style="width: 639px; height: 280px; margin: -66px;" placeholder="Insert Text..." name="content" required>
+                {{ note.content if note else '' }}
             </textarea>
                 
             
