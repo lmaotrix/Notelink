@@ -1,7 +1,7 @@
 body {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #3b3b3b;
+    background-color: #0E0D11;
     color: white;
 }
 
@@ -15,7 +15,7 @@ body {
 
 form {
     border-radius: 10px;
-    background-color: #555454;
+    background-color: #1D1B22;
     height: 600px;
     position: relative;
 }
@@ -28,18 +28,22 @@ form {
 img.logo {
     width: 120px;
     border-radius: 50%;
+    margin-top: 20px;
 }
 
 input[type=text], input[type=password] {
+    font-size: 16px;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: none;
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 0.375rem;
     position: relative;
     top: 33px;
+    background-color: #46484D;
+    color: #F8F8F2;
 }
 
 input[type=password] {
@@ -47,8 +51,12 @@ input[type=password] {
     top: 50px;
 }
 
+input::placeholder {
+    color: #B0AEB5;
+}
+
 button {
-    background-color: #04aa6d;
+    background-color: #44475A;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;

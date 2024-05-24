@@ -2,7 +2,7 @@
 
 body,
 html {
-    background-color: #3b3b3b;
+    background-color: #0E0D11;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    color: #222;
+    color: #0E0D11;
     height: 100%;
     width: 100%;
     font-size: 16px;
@@ -74,7 +74,7 @@ body {
 }
 
 .btn {
-    background-color: #68696b;
+    background-color: #44475A;
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
@@ -104,7 +104,7 @@ body {
     font-style: normal;
     margin: 0 0 1em;
     text-align: center;
-    color: #f1f1f1;
+    color: #F8F8F2;
 }
 
 .notes .body ol,
@@ -147,7 +147,7 @@ a.simple-link {
 .notes .buttons {
     display: block;
     background: #000;
-    color: #fff;
+    color: #F8F8F2;
     text-align: center;
     width: 100%;
     font-size: 12px;
@@ -163,7 +163,7 @@ a.simple-link {
 
 .notes .buttons {
     top: 1px;
-    background: #777
+    background: #6272A4
 }
 
 .mynotes {
@@ -176,8 +176,8 @@ a.simple-link {
 .mynotes li {
     margin-bottom: .2em;
     padding-left: 0 !important;
-    border-radius: 4px;
-    background-color: #222;
+    border-radius: 0.375rem;
+    background-color: #1D1B22;
     width: 700px;
 }
 

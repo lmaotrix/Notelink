@@ -7,24 +7,11 @@
     <link rel="stylesheet" href="/static/css/signup.css">
 </head>
 <body>
-
-    <!-- Flash messages section -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class="flash-messages">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-
-
     <div class="screen">
         <div class="content">
             <form action="/register" method="post" onsubmit="return ValidatePassword()">
                 <div class="imgcontainer">
-                    <img src="/static/img/abstract.png" alt="logo" class="logo">
+                    <img src="/static/img/abstract_light.png" alt="logo" class="logo">
                 </div>
                 <div class="container">
                     <input type="text" placeholder="Enter Username" name="username" required>

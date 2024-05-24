@@ -1,8 +1,8 @@
 body {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #3b3b3b;
-    color: white;
+    background-color: #0E0D11;
+    color: #F8F8F2;
 }
 
 .screen {
@@ -15,7 +15,7 @@ body {
 
 form {
     border-radius: 10px;
-    background-color: #555454;
+    background-color: #1D1B22;
     height: 600px;
     position: relative;
 }
@@ -40,11 +40,17 @@ input[type=text], input[type=password] {
     border-radius: 15px;
     position: relative;
     top: 40px;
+    background-color: #46484D;
+    color: #F8F8F2;
 }
 
 input[type=password] {
     position: relative;
     top: 40px;
+}
+
+input::placeholder {
+    color: #B0AEB5;
 }
 
 p {
@@ -53,7 +59,7 @@ p {
 }
 
 button {
-    background-color: #04aa6d;
+    background-color: #44475A;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;

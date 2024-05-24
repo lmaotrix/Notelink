@@ -1,5 +1,5 @@
 :root {
-    --navbar-bg-color: hsl(0, 0%, 15%);
+    --navbar-bg-color: #0E0D11;
     --navbar-text-color: hsl(0, 0%, 85%);
     --navbar-text-color-focus: white;
     --navbar-bg-contrast: hsl(0, 0%, 25%);
@@ -14,7 +14,7 @@
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     position: relative;
-    background-color: #3b3b3b;
+    background-color: #0E0D11;
   }
   .container {
     max-width: 1000px;
@@ -60,12 +60,12 @@
     justify-content: center;
     width: 120%;
     padding: 0.4em 0.8em;
-    border-radius: 5px;
+    border-radius: 0.375rem;
   }
   
   .navbar-link:is(:focus, :hover) {
     color: var(--navbar-text-color-focus);
-    background-color: var(--navbar-bg-contrast);
+    background-color: #6272A4;
   }
   .navbar-logo {
     background-color: var(--navbar-text-color-focus);
@@ -133,7 +133,7 @@
     left: 0;
     right: 0;
     margin: 1.4rem;
-    border-radius: 5px;
+    border-radius: 0.375rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   }
   
@@ -168,7 +168,7 @@
   }
 
   .user-welcome {
-    color: white;
+    color: #F8F8F2;
     position: absolute;
     right: 25px;
 
@@ -188,24 +188,27 @@
   }
 
   .input {
+    font-size: 16px;
+    font-family: inherit;
     color: rgb(233, 235, 240);
-    background-color: #212121;
+    background-color: #1D1B22;
     width: 600px;
     height: 40px;
     padding: 10px;
     /* text-align: center; */
-    border: 2px solid white;
-    border-radius: 5px;
+    border: 2px solid #282A36;
+    border-radius: 0.375rem;
     /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
   }
   
   .input:focus {
-    color: rgb(233, 235, 240);
-    background-color: #212121;
-    outline-color: rgb(233, 235, 240);
-    box-shadow: -3px -3px 15px rgb(233, 235, 240);
-    transition: .1s;
-    transition-property: box-shadow;
+    color: #F8F8F2;
+    background-color: #1D1B22;
+    outline: .0625rem solid hsl(35, 92%, 66%);
+  }
+
+  .input::placeholder {
+    color: #B0AEB5 !important;
   }
 
   .buttons {
@@ -219,8 +222,8 @@
   button {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: white;
-    background-color: #171717;
+    color: #F8F8F2;
+    background-color: #44475A;
     padding: 1em 2em;
     border: none;
     border-radius: .6rem;
@@ -236,7 +239,7 @@
     transform: translate(-50%, -50%);
     height: 30px;
     width: 30px;
-    background-color: #0c66ed;
+    background-color: #6272A4;
     border-radius: 50%;
     transition: .6s ease;
   }
@@ -280,18 +283,19 @@
     font-size: 16px;
     font-size: max(16px, 1em);
     font-family: inherit;
-    padding: 0.25em 0.5em;
-    background-color: #212121;
-    border: 2px solid #212121;
-    border-radius: 4px;
+    padding: 1em 1em;
+    background-color: #1D1B22;
+    border: 2px solid #282A36;
+    border-radius: 0.375rem;
     color: white;
   }
 
   #textarea:focus {
-    color: rgb(233, 235, 240);
-    background-color: #212121;
-    outline-color: rgb(233, 235, 240);
-    box-shadow: -3px -3px 15px rgb(233, 235, 240);
-    transition: .1s;
-    transition-property: box-shadow;
+    color: #F8F8F2;
+    background-color: #1D1B22;
+    outline: .0625rem solid hsl(35, 92%, 66%);
+  }
+
+  #textarea::placeholder {
+    color: #B0AEB5 !important;
   }

@@ -13,7 +13,7 @@
         <nav class="navbar-container container">
             <a href="/" class="home-link">
                 <div class="navbar-logo"></div>
-                NoteLink
+                Notey
             </a>
             <button type="button" id="navbar-toggle"  aria-controls="navbar-menu" aria-label="Toggle menu"
                 aria-expanded="false">
@@ -24,12 +24,11 @@
             <div id="navbar-menu" aria-labelledby="navbar-toggle">
                 <ul class="navbar-links">
                     <li class="navbar-item"><a class="navbar-link" href="/notes">notes</a></li>
-                    <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
                     {% if session.get('username') %}
                         <form action="/logout" method="post">
-                            <button type="submit" style="background-color: hsl(0, 0%, 15%);"><li class="navbar-item"><a class="navbar-link" href="/logout">Logout</a></li></button>
+                            <button type="submit" style="background-color: #0E0D11; width: 100.5px;"><li class="navbar-item"><a class="navbar-link" href="/logout" style="font-weight: 400; font-size: 16px;">Logout</a></li></button>
                         </form>    
-                        <div class="user-welcome">Welcome, {{ session['username'] }}</div>
+                        <div class="user-welcome" style="color: #F8F8F2;">Welcome, {{ session['username'] }}</div>
                     {% else %}
                         <li class="navbar-item"><a class="navbar-link" href="/access">Join Us!</a></li>
                     {% endif %}
@@ -47,9 +46,7 @@
                 <input id="noteTitle" placeholder="Enter your Title..." class="input" name="title" type="text" value="{{ note.title if note else '' }}" required>
             </div>
             
-            <textarea id="textarea" style="width: 639px; height: 280px; margin: -66px;" placeholder="Insert Text..." name="content" required>
-                {{ note.content if note else '' }}
-            </textarea>
+            <textarea id="textarea" style="width: 639px; height: 280px; margin: -66px;" placeholder="Insert Text..." name="content" required>{{ note.content if note else '' }}</textarea>
                 
             
             <div class="buttons">

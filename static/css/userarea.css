@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 body {
-    background-color: #3b3b3b;
-    color: white;
+    background-color: #0E0D11;
+    color: #F8F8F2;
     font-family: 'Montserrat', sans-serif;
 }
 
 #userarea-section {
     display: flex;
-    background-color: #555454;
+    background-color: #1D1B22;
     width: 40%;
     height: 25%;
     position: fixed;
@@ -56,14 +56,13 @@ h1 {
     display: flex;
     align-items: center;
     gap: 15px;
-
-    color: #2E2E2E;
+    text-decoration: none;
+    color: #F8F8F2;
     padding: 18px 32px;
     font-weight: 500;
     font-size: 18px;
     border-radius: 30px;
-    background: #fff;
-    box-shadow: 0px 4px 15px rgba(46, 46, 46, 0.15);
+    background: #44475A;
 }
 
 p {

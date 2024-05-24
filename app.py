@@ -22,6 +22,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), nullable=False, unique=True)
     password_hash = db.Column(db.String(100), nullable=False)
+    notes = db.relationship('Note', backref = 'user', lazy = True)
 
 class Note(db.Model):
     __tablename__ = 'notes'
@@ -39,21 +40,22 @@ from flask import redirect, render_template, request, session, make_response, fl
 def index(note_id=None):
     note = None
     if note_id:
-        note = Note.query.get_or_404(note_id)
+        note = Note.query.filter_by(id=note_id, user_id=session.get("user_id")).first_or_404()
 
     if request.method == "POST":
         if not session.get("logged_in"):
             return redirect("/access")
-        
+
         note_id = request.form.get("note_id")
         note_title = request.form.get("title")
         note_content = request.form.get("content")
         user_id = session.get("user_id")
 
         if note_id:
-            note = Note.query.get(note_id)
-            note.title = note_title
-            note.content = note_content
+            note = Note.query.filter_by(id=note_id, user_id=user_id).first()
+            if note:
+                note.title = note_title
+                note.content = note_content
         else:
             if note_title and note_content:
                 note = Note(title=note_title, content=note_content, user_id=user_id)
@@ -67,15 +69,19 @@ def index(note_id=None):
     return render_template("index.html", note=note)
 
 
-@app.route("/notes", methods=["GET", "POST"])
+@app.route("/notes", methods=["GET"])
 def notes():
+    if not session.get("logged_in"):
+        return redirect("/access")
+    
+    
     user_id = session.get("user_id")
-    notes = Note.query.filter_by(user_id=user_id).all()
+    notes = Note.query.filter_by(user_id=user_id).order_by(Note.id.desc()).all()
     return render_template("notes.html", notes=notes)
 
 @app.route("/delete_note/<int:note_id>", methods=["POST"])
 def delete_note(note_id):
-    note = Note.query.get(note_id)
+    note = Note.query.filter_by(id=note_id, user_id=session.get("user_id")).first()
     if note:
         db.session.delete(note)
         db.session.commit()
@@ -83,11 +89,6 @@ def delete_note(note_id):
     else:
         flash("Note not found")
     return redirect("/notes")
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -100,6 +101,7 @@ def login():
         if user and check_password_hash(user.password_hash, password):
             session['logged_in'] = True
             session['username'] = username
+            session['user_id'] = user.id
             flash("Login successful!", "success")
             return redirect("/")
         else:
