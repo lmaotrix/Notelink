@@ -1,4 +1,23 @@
+# Virtual environment
 venv/
+
+# Python bytecode
 __pycache__/
 *.pyc
-*.db
+
+# Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
+.project
+*.pydevproject
+.DS_Store
+
+# Environment-specific settings
+.env
+
