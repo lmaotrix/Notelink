@@ -26,7 +26,7 @@
                     <li class="navbar-item"><a class="navbar-link" href="/notes">notes</a></li>
                     {% if session.get('username') %}
                         <form action="/logout" method="post">
-                            <button type="submit" style="background-color: #0E0D11; width: 100.5px;"><li class="navbar-item"><a class="navbar-link" href="/logout" style="font-weight: 400; font-size: 16px;">Logout</a></li></button>
+                            <button type="submit" style="background-color: #0E0D11; width: 100.5px;"><li class="navbar-item"><a class="navbar-link" style="font-weight: 400; font-size: 16px;">Logout</a></li></button>
                         </form>    
                         <div class="user-welcome" style="color: #F8F8F2;">Welcome, {{ session['username'] }}</div>
                     {% else %}
