@@ -10,7 +10,8 @@
     padding: 0;
   }
   body {
-    height: 100vh;
+    height: 100%;
+    overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     position: relative;
@@ -184,7 +185,7 @@
   }
 
   .title {
-    margin-top: -188px;
+    margin-top: -120px;
   }
 
   .input {
@@ -216,7 +217,7 @@
     bottom: 0px;
     text-align: center;
     padding: 20px;
-    margin-bottom: -120px;
+    margin-bottom: -1000px;
   }
 
   button {
@@ -276,7 +277,7 @@
   
   .editorform {
     margin-top: 186px;
-    height: 224px;
+    height: 740px;
   }
 
   #textarea {
@@ -288,6 +289,7 @@
     border: 2px solid #282A36;
     border-radius: 0.375rem;
     color: white;
+    margin-top: -100px;
   }
 
   #textarea:focus {
@@ -298,4 +300,53 @@
 
   #textarea::placeholder {
     color: #B0AEB5 !important;
+  }
+
+  /*  responsiveness */
+
+  /* Large devices (desktops, less than 1200px) */
+  @media (max-width: 1199.98px) {
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .title {
+      margin-top: -107px;
+      height: 285px;
+    }
+
+    .buttons {
+      margin-bottom: -935px;
+    }
+  }
+
+  /* X-Small devices (portrait phones, less than 576px) */
+  @media (max-width: 575.98px) {
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .editorform {
+      height: 620px;
+      margin-top: 217px;
+    }
+    
+    .title {
+      margin-top: 106px;
+      height: 90px;
+      margin-bottom: 100px;
+    }
+
+    .input {
+      margin-top: -50px !important;
+      width: 100%;
+      margin-left: 15px;
+    }
+
+    #textarea {
+      margin-bottom: -155px !important;
+      
+    }
   }
