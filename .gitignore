@@ -21,3 +21,7 @@ __pycache__/
 # Environment-specific settings
 .env
 
+#session tracking files
+/instance
+/flask_session
+
