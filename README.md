@@ -1,5 +1,5 @@
 # NOTELINK
-#### Video Demo:  <URL HERE>
+#### Video Demo:  [<URL HERE>](https://youtu.be/Zw1L4m9HvSA?si=y7MqZ0m8C2Xywoc4)
 #### Description:
 - USE CASES:
 NoteLink is designed to provide a secure and user-friendly platform for managing personal notes. Users can create an account, log in, and access their notes from any device. The application supports creating, editing, and deleting notes, making it ideal for keeping track of personal thoughts, tasks, or important information. With its session management and user authentication features, Notelink ensures that users' data is kept private and secure. This app is particularly useful for individuals looking for a simple yet effective solution for note-taking and organization.
