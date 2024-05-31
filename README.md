@@ -2,61 +2,96 @@
 #### Video Demo:  <URL HERE>
 #### Description:
 - USE CASES:
-NoteLink serves as a versatile tool for users to organize their thoughts, ideas, and information effectively. With the ability to register and log in, users gain access to personalized features, such as creating, editing, and deleting their own notes. The sidebar navigation enhances user experience by allowing seamless movement between different sections, including the user's private notes and the community page. On the community page, users can share their knowledge by uploading notes for others to benefit from, fostering a collaborative learning environment. Moreover, the functionality to copy notes to their codespace empowers users to integrate their notes directly into their coding workflow, facilitating efficient referencing and utilization of information. Overall, NoteLink caters to diverse user needs, from individual organization to community knowledge-sharing, while promoting productivity and collaboration.
+NoteLink is designed to provide a secure and user-friendly platform for managing personal notes. Users can create an account, log in, and access their notes from any device. The application supports creating, editing, and deleting notes, making it ideal for keeping track of personal thoughts, tasks, or important information. With its session management and user authentication features, Notelink ensures that users' data is kept private and secure. This app is particularly useful for individuals looking for a simple yet effective solution for note-taking and organization.
 
 - FEATURES:
-1. Register/Login/Logout: Users can create an account, log in, and log out.
-2. Sidebar Navigation: Allows users to navigate between different sections of the app.
-3. Notes Management: Users can create, view, edit, and delete their own notes.
-4. Community Page: Users can upload their notes for others to view and use.
-5. Copy Note to Codespace: Provides a button to copy a note to the user's codespace as a new note.
+1. **User Authentication**: Users can securely register, login and logout thanks to the efficient password hashing for secure storage.
+2. **Session Management**: Users are kept logged in throughout sessions.
+3. **Notes Management**: Users can create, view, edit, and delete their own notes.
+4. **Database Integration**: The web app uses an SQLite database for storing user information and Flask-Migrate to handle the changes in the table models.
+5. **User-Specific-Data**: Notes are linked to user accounts.
+6. **Template Rendering**: HTML templates for rendering pages (e.g., login, registration, note list, note editor).
+
 
 - COMPONENTS:
-1. HTML/CSS/Bootstrap: Used for frontend development and styling
+1. HTML/CSS: Used for frontend development and styling
 2. JavaScript: Used for dynamic interactions on the client-side.
 3. Python with Flask: Used for backend development and routing.
-4. Python with Eel: Facilitates integration of Python backend with frontend using web technologies
 5. SQLite3: Lightweight database for storing user information and notes.
 6. Jinja: Templating engine for rendering dynamic content in HTML
 
 - FILE STRUCTURE:
-notelink/
-│
-├── app/
-│   ├── static/
-│   │   ├── css/
-│   │   │   └── styles.css
-│   │   └── js/
-│   │       └── script.js
-│   ├── templates/
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   ├── register.html
-│   │   ├── notes.html
-│   │   ├── community.html
-│   │   └── note_detail.html
-│   ├── controllers.py
-│   ├── models.py
-│   └── __init__.py
-│
-├── database/
-│   └── app.db
-│
-├── scripts/
-│   └── seed.py
-│
-├── requirements.txt
-│
-└── run.py
+Notelink/
+├─ database/
+│  ├─ app.db
+├─ static/
+│  ├─ css/
+│  │  ├─ error.css
+│  │  ├─ login.css
+│  │  ├─ notes.css
+│  │  ├─ signup.css
+│  │  ├─ styles.css
+│  │  ├─ userarea.css
+│  ├─ img/
+│  │  ├─ abstract_light.png
+│  │  ├─ abstract.png
+│  │  ├─ favicon.ico
+│  ├─ js/
+│  │  ├─ editor.js
+│  │  ├─ script.js
+│  │  ├─ signup.js
+├─ templates/
+│  ├─ 401.html
+│  ├─ about.html
+│  ├─ index.html
+│  ├─ login.html
+│  ├─ notes.html
+│  ├─ signup.html
+│  ├─ userarea.html
+├─ .gitignore
+├─ app.py
+├─ config.py
+├─ README.md
+├─ requirements.txt
+├─ vercel.json
 
-- EXPLANATION:
-app/: This directory contains all the application code.
-    static/: Holds CSS and JavaScript files.
-    templates/: Contains HTML templates.
-    controllers.py: Handles the application logic.
-    models.py: Defines the database models.
-    _init_.py: Initializes the Flask application.
-database/: Contains the SQLite database file.
-scripts/: Scripts for database seeding or other utilities.
-requirements.txt: Lists all Python dependencies.
-run.py: Entry point to run the Flask application.
+-  ### EXPLANATION:
+- **database/**: Contains the SQLite database file.
+  - **app.db**: The SQLite database file that stores application data.
+  
+- **static/**: Holds CSS, images, and JavaScript files.
+  - **css/**: Directory for CSS files used for styling the web pages.
+    - **error.css**: Styles for error pages.
+    - **login.css**: Styles for the login page.
+    - **notes.css**: Styles for the notes page.
+    - **signup.css**: Styles for the signup page.
+    - **styles.css**: General styles for the application.
+    - **userarea.css**: Styles for the user area page.
+  - **img/**: Directory for image files used in the application.
+    - **abstract_light.png**: Light-themed abstract background image.
+    - **abstract.png**: Dark-themed abstract background image.
+    - **favicon.ico**: Favicon for the application.
+  - **js/**: Directory for JavaScript files used in the application.
+    - **editor.js**: JavaScript for the note editor functionality.
+    - **script.js**: General JavaScript for the application.
+    - **signup.js**: JavaScript for the signup page functionality.
+    
+- **templates/**: Contains HTML templates for rendering web pages.
+  - **401.html**: Template for the 401 Unauthorized error page.
+  - **about.html**: Template for the About page.
+  - **index.html**: Template for the main page.
+  - **login.html**: Template for the login page.
+  - **notes.html**: Template for the notes listing page.
+  - **signup.html**: Template for the signup page.
+  - **userarea.html**: Template for the user area page.
+  
+- **.gitignore**: Specifies which files and directories should be ignored by Git.
+- **app.py**: The main application file containing the Flask application instance, routes, and database models.
+- **config.py**: Configuration file for environment-specific settings (e.g., secret key, database URI).
+- **README.md**: Information about the project, including setup instructions and usage.
+- **requirements.txt**: Lists the Python dependencies required by the application.
+- **vercel.json**: Configuration file for deploying the application to Vercel, specifying build settings.
+
+
+
+
