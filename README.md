@@ -21,6 +21,7 @@ NoteLink is designed to provide a secure and user-friendly platform for managing
 6. Jinja: Templating engine for rendering dynamic content in HTML
 
 - FILE STRUCTURE:
+<pre>
 Notelink/
 ├─ database/
 │  ├─ app.db
@@ -54,6 +55,7 @@ Notelink/
 ├─ README.md
 ├─ requirements.txt
 ├─ vercel.json
+<pre>
 
 -  ### EXPLANATION:
 - **database/**: Contains the SQLite database file.
