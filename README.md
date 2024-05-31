@@ -55,7 +55,8 @@ Notelink/
 ├─ README.md
 ├─ requirements.txt
 ├─ vercel.json
-<pre>
+
+</pre>
 
 -  ### EXPLANATION:
 - **database/**: Contains the SQLite database file.
