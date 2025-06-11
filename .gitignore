@@ -25,3 +25,5 @@ __pycache__/
 /instance
 /flask_session
 
+# Database
+*.db
